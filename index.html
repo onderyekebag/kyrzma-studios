@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
 <title>Kyrzma Studios</title>
-<meta name="description" content="Kyrzma Studios — independent game studio founded in 2024. About the studio, Privacy Policy and Terms of Service.">
+<meta name="description" content="Kyrzma Studios — independent studio making one-finger, offline mobile games. Our games: Roadloom, Perisar, LANTERNFALL. Privacy Policy and Terms of Service.">
 <link rel="icon" type="image/png" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <meta name="theme-color" content="#050506">
@@ -89,6 +89,48 @@
   .doc .doc-title { font-weight: 700; color: var(--heading); font-size: 16px; letter-spacing: 0.02em; }
   .doc .chev { color: var(--silver); flex: none; font-size: 20px; }
 
+  .games { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; }
+  .game {
+    display: flex; align-items: flex-start; gap: 14px;
+    background: linear-gradient(180deg, var(--surface) 0%, #0b0c0e 100%);
+    border: 1px solid var(--border-strong); border-radius: 14px;
+    padding: 16px; color: var(--text); text-decoration: none;
+    transition: border-color .15s, background .15s, transform .05s;
+  }
+  a.game:hover { border-color: var(--silver); background: var(--surface-2); }
+  a.game:active { transform: translateY(1px); }
+  a.game:focus-visible { outline: 2px solid var(--silver-bright); outline-offset: 2px; }
+  .game-icon {
+    flex: none; width: 60px; height: 60px; border-radius: 14px;
+    border: 1px solid var(--border); object-fit: cover; background: #000;
+  }
+  .game-icon--ph {
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; font-weight: 800; color: var(--silver);
+    background: linear-gradient(135deg, #17181d 0%, #0a0a0c 100%);
+  }
+  .game-body { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+  .game-name {
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    font-weight: 700; color: var(--heading); font-size: 16px; letter-spacing: 0.02em;
+  }
+  .game-desc { font-size: 14px; color: var(--muted); line-height: 1.5; }
+  .gplay {
+    display: inline-flex; align-items: center; gap: 7px; align-self: flex-start;
+    margin-top: 4px; padding: 6px 12px 6px 10px;
+    border: 1px solid var(--border-strong); border-radius: 8px;
+    background: var(--surface-2); color: var(--silver-bright);
+    font-size: 13px; font-weight: 600; letter-spacing: 0.02em;
+  }
+  a.game:hover .gplay { border-color: var(--silver); }
+  .gplay svg { width: 12px; height: 14px; flex: none; }
+  .soon-badge {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--muted); background: var(--surface-2);
+    border: 1px solid var(--border-strong); border-radius: 6px; padding: 2px 8px;
+  }
+  .game--soon { opacity: 0.82; }
+
   .contact {
     background: var(--surface); border: 1px solid var(--border);
     border-left: 2px solid var(--silver);
@@ -123,12 +165,56 @@
     <div class="wrap">
       <h2 data-en="About" data-tr="Hakkımızda">About</h2>
       <div class="about">
-        <p data-en="We are an independent game studio founded in 2024, with a single focus: making games that are genuinely fun to play. We build and publish titles across every category, for players of all kinds."
-           data-tr="2024'te kurulmuş bağımsız bir oyun stüdyosuyuz ve tek bir şeye odaklanıyoruz: gerçekten keyif veren oyunlar yapmak. Her kategoride, her türden oyuncu için oyunlar geliştirip yayınlıyoruz.">We are an independent game studio founded in 2024, with a single focus: making games that are genuinely fun to play. We build and publish titles across every category, for players of all kinds.</p>
-        <p data-en="We grow and improve thanks to our players — your support means everything to us. Every piece of feedback shapes what we build next."
-           data-tr="Oyuncularımız sayesinde büyüyor ve gelişiyoruz — desteğiniz bizim için her şey. Her geri bildirim, bir sonraki oyunumuzu şekillendiriyor.">We grow and improve thanks to our players — your support means everything to us. Every piece of feedback shapes what we build next.</p>
-        <p data-en="Our goal is simple: to craft games, with care and attention to detail, that everyone can enjoy."
-           data-tr="Hedefimiz basit: özenle ve detaylara önem vererek, herkesin keyif alabileceği oyunlar yapmak.">Our goal is simple: to craft games, with care and attention to detail, that everyone can enjoy.</p>
+        <p data-en="Kyrzma Studios is an independent studio founded in 2024. We make mobile games built around a single touch — simple controls, short sessions, and no account to sign up for."
+           data-tr="Kyrzma Studios, 2024'te kurulmuş bağımsız bir stüdyo. Tek dokunuş üzerine kurulu mobil oyunlar yapıyoruz: basit kontroller, kısa oturumlar ve hesap açma zorunluluğu yok.">Kyrzma Studios is an independent studio founded in 2024. We make mobile games built around a single touch — simple controls, short sessions, and no account to sign up for.</p>
+        <p data-en="Our games run offline, so you can play them anywhere. We build them a step at a time and refine each one with player feedback."
+           data-tr="Oyunlarımız çevrimdışı çalışır; her yerde oynayabilirsiniz. Oyunları adım adım geliştiriyor ve her birini oyuncu geri bildirimiyle iyileştiriyoruz.">Our games run offline, so you can play them anywhere. We build them a step at a time and refine each one with player feedback.</p>
+      </div>
+
+      <h2 data-en="Games" data-tr="Oyunlar">Games</h2>
+      <div class="games">
+        <a class="game" href="https://play.google.com/store/apps/details?id=com.kyrzma.roadloom" target="_blank" rel="noopener" aria-label="Roadloom on Google Play">
+          <img class="game-icon" src="assets/games/roadloom.png" alt="Roadloom icon" width="60" height="60" loading="lazy">
+          <div class="game-body">
+            <span class="game-name">Roadloom</span>
+            <span class="game-desc"
+              data-en="Drag your three road pieces to bridge the gaps ahead of the runner. Jumps, obstacles, speed and storm, day and night, plus a character shop."
+              data-tr="Elindeki üç yol parçasını sürükleyip koşucunun önündeki boşluklara döşersin. Zıplama, engeller, hız ve fırtına, gece-gündüz ve bir karakter marketi.">Drag your three road pieces to bridge the gaps ahead of the runner. Jumps, obstacles, speed and storm, day and night, plus a character shop.</span>
+            <span class="gplay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5v19l16-9.5z" fill="currentColor"/></svg>Google Play</span>
+          </div>
+        </a>
+
+        <a class="game" href="https://play.google.com/store/apps/details?id=com.kyrzma.perisar" target="_blank" rel="noopener" aria-label="Perisar on Google Play">
+          <img class="game-icon" src="assets/games/perisar.png" alt="Perisar icon" width="60" height="60" loading="lazy">
+          <div class="game-body">
+            <span class="game-name">Perisar</span>
+            <span class="game-desc"
+              data-en="One-finger push-and-pull control in a black hole's orbit. Collect crystals, avoid the heat and the hunter, and dive through the layers."
+              data-tr="Karadelik yörüngesinde tek parmakla bas-çek kontrolü. Kristalleri toplar, ısıdan ve avcıdan kaçınıp katlara dalarsın.">One-finger push-and-pull control in a black hole's orbit. Collect crystals, avoid the heat and the hunter, and dive through the layers.</span>
+            <span class="gplay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5v19l16-9.5z" fill="currentColor"/></svg>Google Play</span>
+          </div>
+        </a>
+
+        <a class="game" href="https://play.google.com/store/apps/details?id=com.kyrzma.lanternfall" target="_blank" rel="noopener" aria-label="LANTERNFALL on Google Play">
+          <img class="game-icon" src="assets/games/lanternfall.png" alt="LANTERNFALL icon" width="60" height="60" loading="lazy">
+          <div class="game-body">
+            <span class="game-name">LANTERNFALL</span>
+            <span class="game-desc"
+              data-en="A top-down stealth maze. Guide your lantern to the exit without being caught by light or sound. 20 levels, with bosses."
+              data-tr="Top-down stealth labirent. Işığa ve sese yakalanmadan feneri yönetip çıkışa ulaşırsın. 20 bölüm ve boss'lar.">A top-down stealth maze. Guide your lantern to the exit without being caught by light or sound. 20 levels, with bosses.</span>
+            <span class="gplay"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 2.5v19l16-9.5z" fill="currentColor"/></svg>Google Play</span>
+          </div>
+        </a>
+
+        <div class="game game--soon">
+          <div class="game-icon game-icon--ph" aria-hidden="true">U</div>
+          <div class="game-body">
+            <span class="game-name">Umbra <span class="soon-badge" data-en="Coming Soon" data-tr="Yakında">Coming Soon</span></span>
+            <span class="game-desc"
+              data-en="Drag the sun with your finger; the character can only walk across the shadows."
+              data-tr="Güneşi parmağınla sürüklersin; karakter yalnızca gölgelerin üzerinde yürüyebilir.">Drag the sun with your finger; the character can only walk across the shadows.</span>
+          </div>
+        </div>
       </div>
 
       <h2 data-en="Documents" data-tr="Belgeler">Documents</h2>
